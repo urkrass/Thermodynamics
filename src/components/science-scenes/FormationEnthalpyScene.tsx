@@ -32,8 +32,8 @@ export function FormationEnthalpyScene({
   const productTotal = totalContribution(products);
   const deltaH = productTotal - reactantTotal;
   const yScale = scaleLinear({
-    domain: valueDomain([reactantTotal, productTotal], 140),
-    range: [188, 62],
+    domain: valueDomain([reactantTotal, productTotal], 160),
+    range: [140, 50],
   });
   const reactantY = yScale(reactantTotal);
   const productY = yScale(productTotal);
@@ -45,121 +45,125 @@ export function FormationEnthalpyScene({
 
   return (
     <svg
-      viewBox="0 0 360 260"
-      className="h-full w-full"
+      viewBox="0 0 720 190"
+      className="h-full w-full overflow-visible"
       role="img"
       aria-label="Formation enthalpy products minus reactants visualization"
     >
       <Group>
-        <text x={88} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={155} y={24} textAnchor="middle" fontSize={15} fill="#64727c">
           reactants
         </text>
-        <text x={272} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={565} y={24} textAnchor="middle" fontSize={15} fill="#64727c">
           products
         </text>
 
-        <line x1={180} x2={180} y1={48} y2={206} stroke="#e3ebef" strokeWidth={1.5} />
-        <text x={192} y={54} fontSize={10.5} fill="#8a98a3">
+        <line x1={360} x2={360} y1={36} y2={152} stroke="#dbe5e9" strokeWidth={2} />
+        <text x={376} y={50} fontSize={13} fill="#8a98a3">
           enthalpy
         </text>
 
         <motion.line
-          x1={44}
-          x2={150}
+          x1={70}
+          x2={300}
           y1={reactantY}
           y2={reactantY}
-          stroke="#517da5"
-          strokeWidth={2.5}
+          stroke={toneColor("blue")}
+          strokeWidth={3.5}
           strokeLinecap="round"
           initial={reduceMotion ? false : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 0.42, ease: "easeOut" }}
+          transition={{ duration: reduceMotion ? 0 : 0.45, ease: "easeOut" }}
         />
         <motion.line
-          x1={210}
-          x2={316}
+          x1={420}
+          x2={650}
           y1={productY}
           y2={productY}
-          stroke="#2b8f8a"
-          strokeWidth={2.5}
+          stroke={toneColor("teal")}
+          strokeWidth={3.5}
           strokeLinecap="round"
           initial={reduceMotion ? false : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 0.42, delay: 0.08, ease: "easeOut" }}
+          transition={{ duration: reduceMotion ? 0 : 0.45, delay: 0.08, ease: "easeOut" }}
         />
 
         <text
-          x={88}
-          y={reactantY < 82 ? reactantY + 18 : reactantY - 10}
+          x={185}
+          y={reactantY < 100 ? reactantY + 28 : reactantY - 16}
           textAnchor="middle"
-          fontSize={12}
+          fontSize={16}
           fill="#172026"
         >
           {sideLabel(reactants)}
         </text>
         <text
-          x={88}
-          y={reactantY < 82 ? reactantY + 34 : reactantY + 18}
+          x={185}
+          y={reactantY < 100 ? reactantY + 52 : reactantY + 28}
           textAnchor="middle"
-          fontSize={11}
+          fontSize={13}
           fill="#64727c"
         >
-          {`ΣR = ${formatSignedSceneNumber(reactantTotal)}`}
+          {`ΣR = ${formatSignedSceneNumber(reactantTotal)} ${unitText}`}
         </text>
         <text
-          x={272}
-          y={productY < 82 ? productY + 18 : productY - 10}
+          x={535}
+          y={productY < 100 ? productY + 28 : productY - 16}
           textAnchor="middle"
-          fontSize={12}
+          fontSize={16}
           fill="#172026"
         >
           {sideLabel(products)}
         </text>
         <text
-          x={272}
-          y={productY < 82 ? productY + 34 : productY + 18}
+          x={535}
+          y={productY < 100 ? productY + 52 : productY + 28}
           textAnchor="middle"
-          fontSize={11}
+          fontSize={13}
           fill="#64727c"
         >
-          {`ΣP = ${formatSignedSceneNumber(productTotal)}`}
+          {`ΣP = ${formatSignedSceneNumber(productTotal)} ${unitText}`}
         </text>
 
         <motion.path
-          d={`M180 ${isEndothermic ? arrowBottom - 4 : arrowTop + 4} L180 ${
-            isEndothermic ? arrowTop + 8 : arrowBottom - 8
+          d={`M360 ${isEndothermic ? arrowBottom - 8 : arrowTop + 8} L360 ${
+            isEndothermic ? arrowTop + 12 : arrowBottom - 12
           }`}
           fill="none"
           stroke={toneColor(deltaTone)}
-          strokeWidth={2.6}
+          strokeWidth={3.5}
           strokeLinecap="round"
           initial={reduceMotion ? false : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 0.5, delay: 0.22, ease: "easeOut" }}
+          transition={{ duration: reduceMotion ? 0 : 0.55, delay: 0.22, ease: "easeOut" }}
         />
         <path
           d={
             isEndothermic
-              ? `M174 ${arrowTop + 15} L180 ${arrowTop + 6} L186 ${arrowTop + 15}`
-              : `M174 ${arrowBottom - 15} L180 ${arrowBottom - 6} L186 ${arrowBottom - 15}`
+              ? `M351 ${arrowTop + 22} L360 ${arrowTop + 9} L369 ${arrowTop + 22}`
+              : `M351 ${arrowBottom - 22} L360 ${arrowBottom - 9} L369 ${arrowBottom - 22}`
           }
           fill="none"
           stroke={toneColor(deltaTone)}
-          strokeWidth={2.4}
+          strokeWidth={3}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <text
-          x={180}
-          y={232}
+
+        <motion.text
+          x={360}
+          y={174}
           textAnchor="middle"
           dominantBaseline="middle"
-          fontSize={15}
-          fontWeight={600}
+          fontSize={20}
+          fontWeight={650}
           fill="#172026"
+          initial={reduceMotion ? false : { opacity: 0, y: 182 }}
+          animate={{ opacity: 1, y: 174 }}
+          transition={{ duration: reduceMotion ? 0 : 0.3, delay: 0.42, ease: "easeOut" }}
         >
           {`ΔH = ${formatSignedSceneNumber(deltaH)} ${unitText}`}
-        </text>
+        </motion.text>
       </Group>
     </svg>
   );

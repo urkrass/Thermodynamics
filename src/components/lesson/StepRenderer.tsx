@@ -6,6 +6,7 @@ import { EquationBlock } from "@/components/lesson/EquationBlock";
 import { ExampleReveal } from "@/components/lesson/ExampleReveal";
 import { ExerciseInput } from "@/components/lesson/ExerciseInput";
 import { NotationText } from "@/components/lesson/NotationText";
+import { ScientificVisual } from "@/components/lesson/ScientificVisual";
 
 type StepRendererProps = {
   step: LessonStep;
@@ -44,17 +45,17 @@ export function StepRenderer({
   onReviewWeakAreas,
 }: StepRendererProps) {
   return (
-    <article className="space-y-5">
+    <article className="space-y-6">
       <div className="space-y-3">
         <p className="text-sm font-medium uppercase tracking-[0.16em] text-teal-700">
           {step.type}
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
+        <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
           {step.title}
         </h1>
       </div>
 
-      <div className="max-w-3xl space-y-3 text-lg leading-8 text-slate-600">
+      <div className="max-w-4xl space-y-3 text-lg leading-8 text-slate-600">
         {step.body.map((paragraph) => (
           <p key={paragraph}>
             <NotationText text={paragraph} />
@@ -67,9 +68,15 @@ export function StepRenderer({
           key={equation.latex}
           latex={equation.latex}
           caption={equation.caption}
-          className="max-w-3xl"
+          className="max-w-4xl"
         />
       ))}
+
+      {step.visualType ? (
+        <section aria-label="Scientific visual" className="max-w-5xl">
+          <ScientificVisual type={step.visualType} sceneData={step.sceneData} />
+        </section>
+      ) : null}
 
       {step.example ? (
         <ExampleReveal

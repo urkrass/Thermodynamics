@@ -2,7 +2,6 @@
 
 import { useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
-import type { VisualType } from "@/data/thermoLesson";
 import { BondEnthalpyScene } from "@/components/science-scenes/BondEnthalpyScene";
 import { EntropyParticleScene } from "@/components/science-scenes/EntropyParticleScene";
 import { FormationEnthalpyScene } from "@/components/science-scenes/FormationEnthalpyScene";
@@ -15,6 +14,7 @@ import type {
   GibbsSceneData,
   SceneData,
 } from "@/components/science-scenes/sceneMath";
+import type { VisualType } from "@/data/thermoLesson";
 
 type ScientificVisualProps = {
   type?: VisualType;
@@ -58,41 +58,44 @@ const defaultGibbsScene: GibbsSceneData = {
 
 function SummaryScene() {
   const nodes: Array<[string, number, number, string]> = [
-    ["ΔH°", 72, 68, "#2b8f8a"],
-    ["bonds", 248, 68, "#c78320"],
-    ["ΔS°", 72, 146, "#517da5"],
-    ["ΔG", 248, 146, "#b85c6a"],
+    ["ΔH°", 130, 62, "#2b8f8a"],
+    ["bond ΔH", 320, 62, "#c78320"],
+    ["ΔS°", 510, 62, "#517da5"],
+    ["ΔG", 320, 132, "#b85c6a"],
   ];
 
   return (
     <svg
-      viewBox="0 0 320 210"
+      viewBox="0 0 720 190"
       className="h-full w-full"
       role="img"
       aria-label="Thermodynamics formulas summary"
     >
       <path
-        d="M96 68 H224 M96 146 H224 M160 84 V130"
+        d="M154 62 H296 M344 62 H486 M320 80 V108"
         fill="none"
         stroke="#dbe5e9"
-        strokeWidth={2}
+        strokeWidth={3}
         strokeLinecap="round"
       />
       {nodes.map(([label, x, y, color]) => (
         <g key={label}>
-          <circle cx={x} cy={y} r={4} fill={color} opacity={0.85} />
+          <circle cx={x} cy={y} r={6} fill={color} opacity={0.9} />
           <text
             x={x}
-            y={y + 22}
+            y={y + 25}
             textAnchor="middle"
             dominantBaseline="middle"
-            fontSize={15}
+            fontSize={18}
             fill="#172026"
           >
             {label}
           </text>
         </g>
       ))}
+      <text x={320} y={168} textAnchor="middle" fontSize={15} fill="#64727c">
+        choose the data, apply coefficients, keep units consistent
+      </text>
     </svg>
   );
 }
@@ -128,30 +131,39 @@ export function ScientificVisual({
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  const reduceMotion = isMotionPreferenceReady && prefersReducedMotion;
+  const reduceMotion = !isMotionPreferenceReady || prefersReducedMotion;
+  const sceneKey = `${type}-${isMotionPreferenceReady && !prefersReducedMotion ? "motion" : "static"}`;
 
   return (
-    <div className="mx-auto aspect-[5/4] w-full max-w-[24rem] p-3">
-      {type === "formation" ? (
-        <FormationEnthalpyScene
-          {...getFormationScene(sceneData)}
-          reduceMotion={reduceMotion}
-        />
-      ) : null}
-      {type === "bonds" ? (
-        <BondEnthalpyScene {...getBondScene(sceneData)} reduceMotion={reduceMotion} />
-      ) : null}
-      {type === "entropy" ? (
-        <EntropyParticleScene
-          {...getEntropyScene(sceneData)}
-          reduceMotion={reduceMotion}
-        />
-      ) : null}
-      {type === "gibbs" ? (
-        <GibbsBalanceScene {...getGibbsScene(sceneData)} reduceMotion={reduceMotion} />
-      ) : null}
-      {type === "summary" ? <SummaryScene /> : null}
-      {type === "particles" ? <ParticleField reduceMotion={reduceMotion} /> : null}
+    <div className="lesson-diagram quiet-scrollbar w-full overflow-x-auto py-2">
+      <div key={sceneKey} className="mx-auto h-48 w-full min-w-[42rem] max-w-[45rem] sm:min-w-0">
+        {type === "formation" ? (
+          <FormationEnthalpyScene
+            {...getFormationScene(sceneData)}
+            reduceMotion={reduceMotion}
+          />
+        ) : null}
+        {type === "bonds" ? (
+          <BondEnthalpyScene
+            {...getBondScene(sceneData)}
+            reduceMotion={reduceMotion}
+          />
+        ) : null}
+        {type === "entropy" ? (
+          <EntropyParticleScene
+            {...getEntropyScene(sceneData)}
+            reduceMotion={reduceMotion}
+          />
+        ) : null}
+        {type === "gibbs" ? (
+          <GibbsBalanceScene
+            {...getGibbsScene(sceneData)}
+            reduceMotion={reduceMotion}
+          />
+        ) : null}
+        {type === "summary" ? <SummaryScene /> : null}
+        {type === "particles" ? <ParticleField reduceMotion={reduceMotion} /> : null}
+      </div>
     </div>
   );
 }

@@ -14,20 +14,24 @@ type EntropyParticleSceneProps = EntropySceneData & {
   reduceMotion: boolean;
 };
 
-const width = 360;
-const height = 260;
+const particleWidth = 230;
+const particleHeight = 170;
+const orderedCenterX = particleWidth * 0.31;
+const particleCenterY = particleHeight * 0.52;
 
 function ParticleState({
   particles,
   count,
-  xOffset,
+  centerX,
+  centerY,
   mode,
   emphasize,
   reduceMotion,
 }: {
   particles: EntropyParticle[];
   count: number;
-  xOffset: number;
+  centerX: number;
+  centerY: number;
   mode: "ordered" | "dispersed";
   emphasize: boolean;
   reduceMotion: boolean;
@@ -35,22 +39,27 @@ function ParticleState({
   return (
     <Group>
       {particles.slice(0, count).map((particle, index) => {
-        const cx =
-          xOffset + (mode === "ordered" ? particle.orderedX * 0.45 : particle.dispersedX * 0.45);
-        const cy = mode === "ordered" ? particle.orderedY * 0.6 + 40 : particle.dispersedY * 0.6 + 40;
+        const baseX =
+          mode === "ordered"
+            ? particle.orderedX - orderedCenterX
+            : particle.dispersedX - particleWidth / 2;
+        const baseY =
+          mode === "ordered"
+            ? particle.orderedY - particleCenterY
+            : particle.dispersedY - particleHeight / 2;
 
         return (
           <motion.circle
             key={`${particle.id}-${mode}`}
-            cx={cx}
-            cy={cy}
-            r={particle.radius}
+            cx={centerX + baseX}
+            cy={centerY + baseY}
+            r={particle.radius * 1.18}
             fill={toneColor(particle.tone)}
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.8 }}
-            animate={{ opacity: emphasize ? 0.82 : 0.48, scale: 1 }}
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.82 }}
+            animate={{ opacity: emphasize ? 0.84 : 0.5, scale: 1 }}
             transition={{
-              duration: reduceMotion ? 0 : 0.26,
-              delay: index * 0.02,
+              duration: reduceMotion ? 0 : 0.28,
+              delay: index * 0.025,
               ease: "easeOut",
             }}
           />
@@ -68,8 +77,8 @@ export function EntropyParticleScene({
 }: EntropyParticleSceneProps) {
   const particles = createEntropyParticles({
     count: Math.max(reactantParticles, productParticles, 7),
-    width,
-    height,
+    width: particleWidth,
+    height: particleHeight,
     seed: 31 + reactantParticles * 7 + productParticles * 11,
   });
   const dispersalIncreases = entropyChange >= 0;
@@ -79,44 +88,45 @@ export function EntropyParticleScene({
 
   return (
     <svg
-      viewBox={`0 0 ${width} ${height}`}
-      className="h-full w-full"
+      viewBox="0 0 720 190"
+      className="h-full w-full overflow-visible"
       role="img"
       aria-label="Entropy particle dispersal visualization"
     >
       <Group>
-        <text x={104} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={205} y={20} textAnchor="middle" fontSize={15} fill="#64727c">
           reactants
         </text>
-        <text x={256} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={515} y={20} textAnchor="middle" fontSize={15} fill="#64727c">
           products
         </text>
 
         <ellipse
-          cx={104}
-          cy={118}
-          rx={58}
-          ry={62}
+          cx={205}
+          cy={86}
+          rx={108}
+          ry={54}
           fill="none"
           stroke="#dbe5e9"
-          strokeWidth={1.5}
-          strokeDasharray="4 6"
+          strokeWidth={2}
+          strokeDasharray="5 8"
         />
         <ellipse
-          cx={256}
-          cy={118}
-          rx={58}
-          ry={62}
+          cx={515}
+          cy={86}
+          rx={108}
+          ry={54}
           fill="none"
           stroke="#dbe5e9"
-          strokeWidth={1.5}
-          strokeDasharray="4 6"
+          strokeWidth={2}
+          strokeDasharray="5 8"
         />
 
         <ParticleState
           particles={particles}
           count={reactantParticles}
-          xOffset={42}
+          centerX={205}
+          centerY={86}
           mode={reactantMode}
           emphasize={false}
           reduceMotion={reduceMotion}
@@ -124,47 +134,49 @@ export function EntropyParticleScene({
         <ParticleState
           particles={particles}
           count={productParticles}
-          xOffset={194}
+          centerX={515}
+          centerY={86}
           mode={productMode}
           emphasize
           reduceMotion={reduceMotion}
         />
 
         <motion.path
-          d="M168 118 C181 105, 191 105, 204 118"
+          d="M334 86 C350 66, 370 66, 386 86"
           fill="none"
           stroke={toneColor(tone)}
-          strokeWidth={2.6}
+          strokeWidth={4}
           strokeLinecap="round"
           initial={reduceMotion ? false : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: reduceMotion ? 0 : 0.42, delay: 0.18, ease: "easeOut" }}
         />
         <path
-          d="M198 112 L205 118 L198 124"
+          d="M376 76 L388 86 L376 96"
           fill="none"
           stroke={toneColor(tone)}
-          strokeWidth={2.2}
+          strokeWidth={3}
           strokeLinecap="round"
           strokeLinejoin="round"
         />
 
-        <text x={104} y={198} textAnchor="middle" fontSize={11} fill="#64727c">
+        <text x={205} y={154} textAnchor="middle" fontSize={14} fill="#64727c">
           {reactantMode === "ordered" ? "ordered state" : "dispersed state"}
         </text>
-        <text x={256} y={198} textAnchor="middle" fontSize={11} fill="#64727c">
+        <text x={515} y={154} textAnchor="middle" fontSize={14} fill="#64727c">
           {productMode === "dispersed" ? "dispersed state" : "ordered state"}
         </text>
 
         <motion.text
-          x={180}
-          y={224}
+          x={360}
+          y={176}
           textAnchor="middle"
           dominantBaseline="middle"
-          fontSize={14}
+          fontSize={20}
+          fontWeight={650}
           fill="#172026"
-          initial={reduceMotion ? false : { opacity: 0, y: 230 }}
-          animate={{ opacity: 1, y: 224 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 184 }}
+          animate={{ opacity: 1, y: 176 }}
           transition={{ duration: reduceMotion ? 0 : 0.28, delay: 0.36, ease: "easeOut" }}
         >
           {`ΔS = ${formatSignedSceneNumber(entropyChange)} J mol⁻¹ K⁻¹`}

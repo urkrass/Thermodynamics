@@ -32,46 +32,46 @@ function BondAction({
   mode: "break" | "form";
   reduceMotion: boolean;
 }) {
-  const startGap = mode === "form" ? 16 : 0;
-  const endGap = mode === "form" ? 0 : 16;
+  const startGap = mode === "form" ? 26 : 0;
+  const endGap = mode === "form" ? 0 : 26;
   const tone = mode === "form" ? "teal" : "amber";
 
   return (
     <motion.g
-      initial={reduceMotion ? false : { opacity: 0, y: 4 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: reduceMotion ? 0 : 0.26, ease: "easeOut" }}
+      transition={{ duration: reduceMotion ? 0 : 0.28, ease: "easeOut" }}
     >
       <motion.line
-        x1={x - 15}
+        x1={x - 26}
         y1={y}
-        x2={x + 15}
+        x2={x + 26}
         y2={y}
         stroke={toneColor(tone)}
-        strokeWidth={2.6}
+        strokeWidth={3.4}
         strokeLinecap="round"
-        initial={reduceMotion ? false : { opacity: mode === "form" ? 0.22 : 1 }}
-        animate={{ opacity: mode === "form" ? 1 : 0.2 }}
+        initial={reduceMotion ? false : { opacity: mode === "form" ? 0.2 : 1 }}
+        animate={{ opacity: mode === "form" ? 1 : 0.18 }}
         transition={{ duration: reduceMotion ? 0 : 0.58, delay: 0.12, ease: "easeInOut" }}
       />
       <motion.circle
-        cx={x - 22}
+        cx={x - 39}
         cy={y}
-        r={6.6}
-        fill="#fbfdfd"
+        r={9}
+        fill="#ffffff"
         stroke={toneColor(tone)}
-        strokeWidth={1.5}
+        strokeWidth={2}
         initial={reduceMotion ? false : { x: -startGap }}
         animate={{ x: -endGap }}
         transition={{ duration: reduceMotion ? 0 : 0.58, ease: "easeOut" }}
       />
       <motion.circle
-        cx={x + 22}
+        cx={x + 39}
         cy={y}
-        r={6.6}
-        fill="#fbfdfd"
+        r={9}
+        fill="#ffffff"
         stroke={toneColor(tone)}
-        strokeWidth={1.5}
+        strokeWidth={2}
         initial={reduceMotion ? false : { x: startGap }}
         animate={{ x: endGap }}
         transition={{ duration: reduceMotion ? 0 : 0.58, ease: "easeOut" }}
@@ -80,61 +80,46 @@ function BondAction({
   );
 }
 
-function ArrowMeasure({
-  x,
-  y0,
-  y1,
+function EnergyTerm({
+  centerX,
+  y,
+  length,
   color,
   label,
   reduceMotion,
   delay,
 }: {
-  x: number;
-  y0: number;
-  y1: number;
+  centerX: number;
+  y: number;
+  length: number;
   color: string;
   label: string;
   reduceMotion: boolean;
   delay: number;
 }) {
-  const arrowUp = y1 < y0;
-  const arrowY = y1;
-
   return (
     <Group>
       <motion.line
-        x1={x}
-        x2={x}
-        y1={y0}
-        y2={y1}
+        x1={centerX - length / 2}
+        x2={centerX + length / 2}
+        y1={y}
+        y2={y}
         stroke={color}
-        strokeWidth={3}
+        strokeWidth={3.6}
         strokeLinecap="round"
         initial={reduceMotion ? false : { pathLength: 0, opacity: 0.4 }}
         animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: reduceMotion ? 0 : 0.48, delay, ease: "easeOut" }}
-      />
-      <path
-        d={
-          arrowUp
-            ? `M${x - 6} ${arrowY + 9} L${x} ${arrowY} L${x + 6} ${arrowY + 9}`
-            : `M${x - 6} ${arrowY - 9} L${x} ${arrowY} L${x + 6} ${arrowY - 9}`
-        }
-        fill="none"
-        stroke={color}
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        transition={{ duration: reduceMotion ? 0 : 0.5, delay, ease: "easeOut" }}
       />
       <motion.text
-        x={x < 180 ? x - 14 : x + 14}
-        y={(y0 + y1) / 2 + 4}
-        textAnchor={x < 180 ? "end" : "start"}
-        fontSize={11}
+        x={centerX}
+        y={y + 25}
+        textAnchor="middle"
+        fontSize={14}
         fill="#172026"
         initial={reduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: reduceMotion ? 0 : 0.28, delay: delay + 0.22 }}
+        transition={{ duration: reduceMotion ? 0 : 0.26, delay: delay + 0.18 }}
       >
         {label}
       </motion.text>
@@ -153,68 +138,68 @@ export function BondEnthalpyScene({
   const deltaH = brokenTotal - formedTotal;
   const energyScale = scaleLinear({
     domain: [0, Math.max(brokenTotal, formedTotal, 1)],
-    range: [0, 78],
+    range: [90, 190],
   });
-  const baseline = 142;
-  const inputHeight = energyScale(brokenTotal);
-  const releaseHeight = energyScale(formedTotal);
+  const ledgerY = 110;
+  const inputLength = energyScale(brokenTotal);
+  const releaseLength = energyScale(formedTotal);
   const unitText = formatSvgUnit(unit);
 
   return (
     <svg
-      viewBox="0 0 360 260"
-      className="h-full w-full"
+      viewBox="0 0 720 190"
+      className="h-full w-full overflow-visible"
       role="img"
       aria-label="Bond enthalpy broken bonds minus formed bonds visualization"
     >
       <Group>
-        <text x={104} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={210} y={20} textAnchor="middle" fontSize={15} fill="#64727c">
           bonds broken
         </text>
-        <text x={256} y={32} textAnchor="middle" fontSize={12} fill="#64727c">
+        <text x={510} y={20} textAnchor="middle" fontSize={15} fill="#64727c">
           bonds formed
         </text>
-        <BondAction x={104} y={56} mode="break" reduceMotion={reduceMotion} />
-        <BondAction x={256} y={56} mode="form" reduceMotion={reduceMotion} />
+        <BondAction x={210} y={48} mode="break" reduceMotion={reduceMotion} />
+        <BondAction x={510} y={48} mode="form" reduceMotion={reduceMotion} />
 
-        <text x={104} y={93} textAnchor="middle" fontSize={11} fill="#64727c">
+        <text x={210} y={78} textAnchor="middle" fontSize={15} fill="#172026">
           {compactBondLabel(brokenBonds)}
         </text>
-        <text x={256} y={93} textAnchor="middle" fontSize={11} fill="#64727c">
+        <text x={510} y={78} textAnchor="middle" fontSize={15} fill="#172026">
           {compactBondLabel(formedBonds)}
         </text>
 
-        <line x1={56} x2={304} y1={baseline} y2={baseline} stroke="#dbe5e9" strokeWidth={2} />
-        <text x={180} y={baseline - 8} textAnchor="middle" fontSize={10.5} fill="#8a98a3">
+        <line x1={80} x2={640} y1={ledgerY} y2={ledgerY} stroke="#dbe5e9" strokeWidth={3} />
+        <text x={360} y={ledgerY - 10} textAnchor="middle" fontSize={13} fill="#8a98a3">
           energy ledger
         </text>
 
-        <ArrowMeasure
-          x={104}
-          y0={baseline}
-          y1={baseline - inputHeight}
+        <EnergyTerm
+          centerX={210}
+          y={ledgerY}
+          length={inputLength}
           color={toneColor("amber")}
-          label={`input ${formatSignedSceneNumber(brokenTotal)}`}
+          label={`input ${formatSignedSceneNumber(brokenTotal)} ${unitText}`}
           reduceMotion={reduceMotion}
           delay={0.14}
         />
-        <ArrowMeasure
-          x={256}
-          y0={baseline}
-          y1={baseline + releaseHeight}
+        <EnergyTerm
+          centerX={510}
+          y={ledgerY}
+          length={releaseLength}
           color={toneColor("teal")}
-          label={`release -${formatSignedSceneNumber(formedTotal).replace("+", "").replace("-", "")}`}
+          label={`release -${formatSignedSceneNumber(formedTotal).replace("+", "").replace("-", "")} ${unitText}`}
           reduceMotion={reduceMotion}
           delay={0.22}
         />
 
         <text
-          x={180}
-          y={232}
+          x={360}
+          y={174}
           textAnchor="middle"
           dominantBaseline="middle"
-          fontSize={15}
-          fontWeight={600}
+          fontSize={20}
+          fontWeight={650}
           fill="#172026"
         >
           {`ΔH = ${formatSignedSceneNumber(deltaH)} ${unitText}`}

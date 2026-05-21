@@ -11,57 +11,56 @@ type ParticleFieldProps = {
 
 export function ParticleField({ reduceMotion, seed = 13 }: ParticleFieldProps) {
   const particles = createParticleFieldNodes({
-    count: 12,
-    width: 320,
-    height: 210,
+    count: 18,
+    width: 720,
+    height: 190,
     seed,
   });
 
   return (
     <svg
-      viewBox="0 0 320 210"
-      className="h-full w-full"
+      viewBox="0 0 720 190"
+      className="h-full w-full overflow-visible"
       role="img"
       aria-label="Subtle deterministic particle field"
     >
       <Group>
         <motion.path
-          d="M35 144 C82 86, 124 158, 174 99 S249 70, 284 126"
+          d="M72 142 C154 54, 235 152, 335 88 S536 50, 648 126"
           fill="none"
           stroke="#d3e7e5"
-          strokeWidth={3}
+          strokeWidth={5}
           strokeLinecap="round"
           initial={reduceMotion ? false : { pathLength: 0, opacity: 0.35 }}
           animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 1.1, ease: "easeOut" }}
+          transition={{ duration: reduceMotion ? 0 : 1.05, ease: "easeOut" }}
         />
-        <circle cx={246} cy={132} r={29} fill="#fff4dd" opacity={0.72} />
-        <circle cx={246} cy={132} r={10} fill="#c78320" opacity={0.62} />
+        <circle cx={548} cy={126} r={34} fill="#fff4dd" opacity={0.7} />
+        <circle cx={548} cy={126} r={12} fill="#c78320" opacity={0.62} />
         {particles.map((particle, index) => (
           <motion.circle
             key={particle.id}
             cx={particle.x}
             cy={particle.y}
-            r={particle.radius}
+            r={particle.radius * 1.12}
             fill={particle.fill}
             initial={
               reduceMotion
                 ? false
                 : {
-                    x: -particle.driftX * 0.4,
                     y: 8,
                     opacity: 0,
                   }
             }
-            animate={{ x: 0, y: 0, opacity: particle.opacity }}
+            animate={{ y: 0, opacity: particle.opacity }}
             transition={{
               duration: reduceMotion ? 0 : 0.42,
-              delay: index * 0.035,
+              delay: index * 0.025,
               ease: "easeOut",
             }}
           />
         ))}
-        <text x={160} y={184} textAnchor="middle" fontSize={11} fill="#64727c">
+        <text x={360} y={168} textAnchor="middle" fontSize={16} fill="#64727c">
           energy and matter in motion
         </text>
       </Group>
