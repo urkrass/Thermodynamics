@@ -1,3 +1,5 @@
+import type { SceneData } from "@/components/science-scenes/sceneMath";
+
 export type LessonSectionId =
   | "start"
   | "formation"
@@ -113,6 +115,7 @@ export type LessonStep = {
   body: string[];
   equations?: Equation[];
   visualType?: VisualType;
+  sceneData?: SceneData;
   example?: ExampleContent;
   exercise?: ExerciseContent;
   summaryRows?: SummaryRow[];
@@ -135,6 +138,137 @@ const unitKelvin: UnitRequirement = {
   tokens: ["k"],
   missingFeedback: "The temperature is right. Include K because Gibbs calculations use Kelvin.",
 };
+
+const formationScenes = {
+  methaneCombustion: {
+    kind: "formation",
+    reactants: [
+      { label: "CH4(g)", value: -74.8, tone: "blue" },
+      { label: "O2(g)", value: 0, coefficient: 2, tone: "slate" },
+    ],
+    products: [
+      { label: "CO2(g)", value: -393.5, tone: "teal" },
+      { label: "H2O(l)", value: -285.8, coefficient: 2, tone: "amber" },
+    ],
+  },
+  etheneCombustion: {
+    kind: "formation",
+    reactants: [
+      { label: "C2H4(g)", value: 52.3, tone: "blue" },
+      { label: "O2(g)", value: 0, coefficient: 3, tone: "slate" },
+    ],
+    products: [
+      { label: "CO2(g)", value: -393.5, coefficient: 2, tone: "teal" },
+      { label: "H2O(l)", value: -285.8, coefficient: 2, tone: "amber" },
+    ],
+  },
+  calciumCarbonate: {
+    kind: "formation",
+    reactants: [{ label: "CaCO3(s)", value: -1206.9, tone: "blue" }],
+    products: [
+      { label: "CaO(s)", value: -635.1, tone: "teal" },
+      { label: "CO2(g)", value: -393.5, tone: "amber" },
+    ],
+  },
+  waterFormation: {
+    kind: "formation",
+    reactants: [
+      { label: "H2(g)", value: 0, tone: "slate" },
+      { label: "O2(g)", value: 0, coefficient: 0.5, tone: "slate" },
+    ],
+    products: [{ label: "H2O(l)", value: -285.8, tone: "teal" }],
+  },
+} as const satisfies Record<string, SceneData>;
+
+const bondScenes = {
+  hydrogenChloride: {
+    kind: "bonds",
+    brokenBonds: [
+      { label: "H-H", value: 436, tone: "amber" },
+      { label: "Cl-Cl", value: 242, tone: "amber" },
+    ],
+    formedBonds: [{ label: "H-Cl", value: 431, coefficient: 2, tone: "teal" }],
+  },
+  methaneCombustion: {
+    kind: "bonds",
+    brokenBonds: [
+      { label: "C-H", value: 413, coefficient: 4, tone: "amber" },
+      { label: "O=O", value: 498, coefficient: 2, tone: "amber" },
+    ],
+    formedBonds: [
+      { label: "C=O", value: 805, coefficient: 2, tone: "teal" },
+      { label: "O-H", value: 463, coefficient: 4, tone: "teal" },
+    ],
+  },
+  ammonia: {
+    kind: "bonds",
+    brokenBonds: [
+      { label: "N≡N", value: 945, tone: "amber" },
+      { label: "H-H", value: 436, coefficient: 3, tone: "amber" },
+    ],
+    formedBonds: [{ label: "N-H", value: 391, coefficient: 6, tone: "teal" }],
+  },
+} as const satisfies Record<string, SceneData>;
+
+const entropyScenes = {
+  ammonia: {
+    kind: "entropy",
+    entropyChange: -198.6,
+    reactantParticles: 8,
+    productParticles: 4,
+  },
+  calciumCarbonate: {
+    kind: "entropy",
+    entropyChange: 160.6,
+    reactantParticles: 3,
+    productParticles: 8,
+  },
+  methaneCombustion: {
+    kind: "entropy",
+    entropyChange: -242.8,
+    reactantParticles: 9,
+    productParticles: 5,
+  },
+} as const satisfies Record<string, SceneData>;
+
+const gibbsScenes = {
+  ammonia298: {
+    kind: "gibbs",
+    deltaH: -92.4,
+    deltaS: -0.1986,
+    temperature: 298,
+  },
+  roomTemperature: {
+    kind: "gibbs",
+    deltaH: -120.0,
+    deltaS: -0.25,
+    temperature: 298,
+  },
+  calciumCarbonateHighTemperature: {
+    kind: "gibbs",
+    deltaH: 178.3,
+    deltaS: 0.1606,
+    temperature: 1500,
+  },
+  threshold: {
+    kind: "gibbs",
+    deltaH: 95.0,
+    deltaS: 0.22,
+    temperature: 431.8,
+  },
+  mixedUnitConversion: {
+    kind: "gibbs",
+    deltaH: -40.0,
+    deltaS: -0.12,
+    temperature: 310,
+  },
+  highTemperatureConcept: {
+    kind: "gibbs",
+    deltaH: 95.0,
+    deltaS: 0.22,
+    temperature: 520,
+  },
+} as const satisfies Record<string, SceneData>;
 
 export const lessonSections: LessonSection[] = [
   { id: "start", title: "Start", shortTitle: "Start", accent: "teal" },
@@ -203,6 +337,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Solved example: methane combustion",
     type: "example",
     visualType: "formation",
+    sceneData: formationScenes.methaneCombustion,
     body: ["First identify product terms and reactant terms, then subtract."],
     equations: [
       {
@@ -233,6 +368,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: ethene combustion",
     type: "exercise",
     visualType: "formation",
+    sceneData: formationScenes.etheneCombustion,
     body: ["Use formation enthalpies and remember the coefficients."],
     equations: [
       {
@@ -294,6 +430,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: thermal decomposition",
     type: "exercise",
     visualType: "formation",
+    sceneData: formationScenes.calciumCarbonate,
     body: ["A positive answer means the reaction absorbs energy."],
     equations: [
       {
@@ -364,6 +501,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Solved example: hydrogen chloride",
     type: "example",
     visualType: "bonds",
+    sceneData: bondScenes.hydrogenChloride,
     body: ["Count bonds in reactants as broken and bonds in products as formed."],
     equations: [
       {
@@ -387,6 +525,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: methane by bonds",
     type: "exercise",
     visualType: "bonds",
+    sceneData: bondScenes.methaneCombustion,
     body: ["Use the gas-phase water value here because the bond method uses gaseous molecules."],
     equations: [
       {
@@ -453,6 +592,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: ammonia synthesis",
     type: "exercise",
     visualType: "bonds",
+    sceneData: bondScenes.ammonia,
     body: ["The product side has two NH3 molecules, each with three N-H bonds."],
     equations: [
       {
@@ -526,6 +666,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Solved example: ammonia entropy",
     type: "example",
     visualType: "entropy",
+    sceneData: entropyScenes.ammonia,
     body: ["Products minus reactants works here too, but the units are J mol^-1 K^-1."],
     equations: [
       {
@@ -553,6 +694,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: gas production",
     type: "exercise",
     visualType: "entropy",
+    sceneData: entropyScenes.calciumCarbonate,
     body: ["When a gas forms from solids, entropy often increases."],
     equations: [
       {
@@ -605,6 +747,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: combustion entropy",
     type: "exercise",
     visualType: "entropy",
+    sceneData: entropyScenes.methaneCombustion,
     body: ["Liquid water has much lower molar entropy than gaseous water."],
     equations: [
       {
@@ -666,6 +809,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Feasibility from ΔG",
     type: "theory",
     visualType: "gibbs",
+    sceneData: gibbsScenes.ammonia298,
     body: [
       "Gibbs free energy predicts thermodynamic feasibility under specified conditions.",
       "If ΔG < 0, the reaction is thermodynamically feasible. If ΔG > 0, it is not feasible under those conditions. If ΔG = 0, the system is at equilibrium.",
@@ -683,6 +827,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Solved example: feasibility at 298 K",
     type: "example",
     visualType: "gibbs",
+    sceneData: gibbsScenes.ammonia298,
     body: ["The sign of ΔG is the decision point."],
     example: {
       problem: "Given ΔH = -92.4 kJ mol^-1, ΔS = -198.6 J mol^-1 K^-1, and T = 298 K, calculate ΔG.",
@@ -706,6 +851,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: Gibbs at room temperature",
     type: "exercise",
     visualType: "gibbs",
+    sceneData: gibbsScenes.roomTemperature,
     body: ["Convert entropy first. Then calculate ΔG and decide feasibility."],
     exercise: {
       prompt: "ΔH = -120.0 kJ mol^-1, ΔS = -250.0 J mol^-1 K^-1, T = 298 K. Calculate ΔG.",
@@ -765,6 +911,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: temperature can change feasibility",
     type: "exercise",
     visualType: "gibbs",
+    sceneData: gibbsScenes.calciumCarbonateHighTemperature,
     body: ["For positive ΔH and positive ΔS, higher temperature can make ΔG more negative."],
     exercise: {
       prompt: "ΔH = +178.3 kJ mol^-1 and ΔS = +160.6 J mol^-1 K^-1. Calculate ΔG at 298 K and 1500 K.",
@@ -845,6 +992,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Exercise: minimum feasible temperature",
     type: "exercise",
     visualType: "gibbs",
+    sceneData: gibbsScenes.threshold,
     body: ["At the threshold, ΔG = 0."],
     exercise: {
       prompt: "ΔH = +95.0 kJ mol^-1 and ΔS = +220.0 J mol^-1 K^-1. Find the minimum temperature at which the reaction becomes feasible.",
@@ -926,6 +1074,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Mixed practice: quick formation calculation",
     type: "exercise",
     visualType: "formation",
+    sceneData: formationScenes.waterFormation,
     body: ["A compact products-minus-reactants check."],
     equations: [
       {
@@ -973,6 +1122,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Mixed practice: Gibbs unit conversion",
     type: "exercise",
     visualType: "gibbs",
+    sceneData: gibbsScenes.mixedUnitConversion,
     body: ["This one is designed to catch the entropy unit conversion."],
     exercise: {
       prompt: "ΔH = -40.0 kJ mol^-1, ΔS = -120.0 J mol^-1 K^-1, T = 310 K. Calculate ΔG.",
@@ -1023,6 +1173,7 @@ export const thermoLesson: LessonStep[] = [
     title: "Mixed practice: high temperature feasibility",
     type: "exercise",
     visualType: "gibbs",
+    sceneData: gibbsScenes.highTemperatureConcept,
     body: ["Explain the idea in one or two sentences."],
     exercise: {
       prompt: "Why can a reaction with positive ΔH and positive ΔS become feasible at high temperature?",

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import type { LessonStep } from "@/data/thermoLesson";
 
 type ProgressIndicatorProps = {
@@ -25,9 +26,12 @@ export function ProgressIndicator({
         <span>{completedStepIds.length} done</span>
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-slate-200/70">
-        <div
-          className="h-full rounded-full bg-teal-600 transition-[width] duration-500 ease-out"
-          style={{ width: `${progressPercent}%` }}
+        <motion.div
+          layout
+          className="h-full rounded-full bg-teal-600"
+          initial={false}
+          animate={{ width: `${progressPercent}%` }}
+          transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
         />
       </div>
     </div>

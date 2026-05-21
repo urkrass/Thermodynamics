@@ -1,8 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+} from "motion/react";
 import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   lessonSections,
   thermoLesson,
@@ -58,6 +62,8 @@ function formatLastVisited(timestamp: string | null) {
 }
 
 export function LessonShell() {
+  const prefersReducedMotion = useReducedMotion() ?? false;
+  const [isMotionPreferenceReady, setIsMotionPreferenceReady] = useState(false);
   const {
     session,
     isHydrated,
@@ -79,6 +85,16 @@ export function LessonShell() {
     () => getSectionStatuses(session, currentStep.section),
     [currentStep.section, session],
   );
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setIsMotionPreferenceReady(true);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  const reduceMotion = isMotionPreferenceReady && prefersReducedMotion;
 
   const goToStep = useCallback(
     (index: number) => {
@@ -145,64 +161,72 @@ export function LessonShell() {
 
   return (
     <div className="lesson-shell">
-      <div className="lesson-surface flex flex-col">
-        <header className="flex flex-col gap-4 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap items-center gap-3">
-            <SectionJump
-              currentSectionId={currentStep.section}
-              statuses={statuses}
-              onJump={goToStep}
-            />
-            <p className="text-sm text-slate-500" aria-live="polite">
-              {isHydrated
-                ? formatLastVisited(session.lastVisitedAt)
-                : "Loading saved progress"}
-            </p>
-          </div>
-          <ProgressIndicator
-            currentIndex={currentIndex}
-            steps={thermoLesson}
-            completedStepIds={session.completedStepIds}
-          />
-        </header>
-
-        <main className="grid flex-1 gap-8 px-5 pb-5 pt-3 sm:px-8 sm:pb-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-12">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={currentStep.id}
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -18 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="min-w-0"
-            >
-              <StepRenderer
-                step={currentStep}
-                session={session}
-                summary={summary}
-                totalSteps={thermoLesson.length}
-                onSetAnswer={(answerId, value) =>
-                  setAnswer(currentStep.id, answerId, value)
-                }
-                onRevealExample={() => setExampleRevealed(currentStep.id, true)}
-                onExerciseAttempt={() => incrementExerciseAttempt(currentStep.id)}
-                onExerciseResult={(answerId: string, result: CheckResult) =>
-                  setExerciseResult(currentStep.id, answerId, result)
-                }
-                onShowHint={() => setHintShown(currentStep.id, true)}
-                onShowSolution={() => setSolutionShown(currentStep.id, true)}
-                onReset={handleReset}
-                onReviewWeakAreas={reviewWeakAreas}
+        <div className="lesson-surface flex flex-col">
+          <header className="flex flex-col gap-4 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-wrap items-center gap-3">
+              <SectionJump
+                currentSectionId={currentStep.section}
+                statuses={statuses}
+                onJump={goToStep}
               />
-            </motion.div>
-          </AnimatePresence>
+              <p className="text-sm text-slate-500" aria-live="polite">
+                {isHydrated
+                  ? formatLastVisited(session.lastVisitedAt)
+                  : "Loading saved progress"}
+              </p>
+            </div>
+            <ProgressIndicator
+              currentIndex={currentIndex}
+              steps={thermoLesson}
+              completedStepIds={session.completedStepIds}
+            />
+          </header>
 
-          <aside className="min-w-0 self-center lg:sticky lg:top-8" aria-label="Scientific visual">
-            <ScientificVisual type={currentStep.visualType} />
-          </aside>
-        </main>
+          <main className="grid flex-1 gap-8 px-5 pb-5 pt-3 sm:px-8 sm:pb-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-12">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                layout
+                key={currentStep.id}
+                initial={reduceMotion ? false : { opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={reduceMotion ? undefined : { opacity: 0, x: -18 }}
+                transition={{ duration: reduceMotion ? 0 : 0.3, ease: "easeOut" }}
+                className="min-w-0"
+              >
+                <StepRenderer
+                  step={currentStep}
+                  session={session}
+                  summary={summary}
+                  totalSteps={thermoLesson.length}
+                  onSetAnswer={(answerId, value) =>
+                    setAnswer(currentStep.id, answerId, value)
+                  }
+                  onRevealExample={() => setExampleRevealed(currentStep.id, true)}
+                  onExerciseAttempt={() => incrementExerciseAttempt(currentStep.id)}
+                  onExerciseResult={(answerId: string, result: CheckResult) =>
+                    setExerciseResult(currentStep.id, answerId, result)
+                  }
+                  onShowHint={() => setHintShown(currentStep.id, true)}
+                  onShowSolution={() => setSolutionShown(currentStep.id, true)}
+                  onReset={handleReset}
+                  onReviewWeakAreas={reviewWeakAreas}
+                />
+              </motion.div>
+            </AnimatePresence>
 
-        <footer className="flex flex-col gap-3 px-5 pb-5 sm:px-8 sm:pb-8 md:flex-row md:items-center md:justify-between">
+            <motion.aside
+              layout
+              className="min-w-0 self-center lg:sticky lg:top-8"
+              aria-label="Scientific visual"
+            >
+              <ScientificVisual
+                type={currentStep.visualType}
+                sceneData={currentStep.sceneData}
+              />
+            </motion.aside>
+          </main>
+
+          <footer className="flex flex-col gap-3 px-5 pb-5 sm:px-8 sm:pb-8 md:flex-row md:items-center md:justify-between">
           <button
             type="button"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800 transition hover:border-slate-300 focus:outline-none focus:ring-4 focus:ring-teal-600/10 disabled:opacity-45"
@@ -231,8 +255,8 @@ export function LessonShell() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>
-        </footer>
+          </footer>
+        </div>
       </div>
-    </div>
   );
 }

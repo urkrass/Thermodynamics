@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Eye } from "lucide-react";
 import type { ExampleContent } from "@/data/thermoLesson";
 import { EquationBlock } from "@/components/lesson/EquationBlock";
@@ -49,6 +49,7 @@ export function ExampleReveal({
       <AnimatePresence initial={false}>
         {revealed ? (
           <motion.div
+            layout
             className="space-y-4"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,6 +58,7 @@ export function ExampleReveal({
           >
             {example.working.map((line, index) => (
               <motion.div
+                layout
                 key={line}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { CheckCircle2, HelpCircle, Lightbulb, XCircle } from "lucide-react";
 import type { ExerciseContent } from "@/data/thermoLesson";
 import {
@@ -52,13 +52,17 @@ function Feedback({ result }: { result?: CheckResult }) {
   const Icon = result.status === "correct" ? CheckCircle2 : XCircle;
 
   return (
-    <p
+    <motion.p
+      layout
       className={`mt-3 flex gap-2 rounded-2xl px-4 py-3 text-sm ${statusStyles[result.status]}`}
       aria-live="polite"
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
     >
       <Icon className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
       <NotationText text={result.message} />
-    </p>
+    </motion.p>
   );
 }
 
@@ -240,6 +244,7 @@ export function ExerciseInput({
       <AnimatePresence initial={false}>
         {hintShown ? (
           <motion.p
+            layout
             className="rounded-2xl bg-amber-50 px-4 py-3 text-sm text-amber-950"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -253,6 +258,7 @@ export function ExerciseInput({
       <AnimatePresence initial={false}>
         {solutionShown ? (
           <motion.div
+            layout
             className="space-y-3"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

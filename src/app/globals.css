@@ -135,20 +135,6 @@ button:disabled {
   border-radius: 999px;
 }
 
-@keyframes gentle-float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -8px, 0);
-  }
-}
-
-.gentle-float {
-  animation: gentle-float 7s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -159,9 +145,6 @@ button:disabled {
     transition-duration: 0.01ms !important;
   }
 
-  .gentle-float {
-    animation: none;
-  }
 }
 
 @media (max-width: 740px) {

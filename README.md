@@ -37,7 +37,8 @@ No backend, database, or login is required. Student progress is stored in browse
 - `src/components/lesson/StepRenderer.tsx` renders each lesson step from data.
 - `src/components/lesson/ExerciseInput.tsx` handles numerical, choice, and short-answer exercises.
 - `src/components/lesson/ExampleReveal.tsx` reveals solved examples step by step.
-- `src/components/lesson/ScientificVisual.tsx` contains subtle SVG animations that respect reduced motion.
+- `src/components/lesson/ScientificVisual.tsx` dispatches the side visual for each step.
+- `src/components/science-scenes/` contains parameter-driven SVG scenes using Motion for React for animation and visx/D3 for scales, geometry, and particle layout.
 - `src/data/thermoLesson.ts` contains the structured lesson content.
 - `src/lib/checkAnswer.ts` contains reusable answer checking and common-mistake detection.
 - `src/lib/useLessonSession.ts` stores progress and answers in `localStorage`.
@@ -53,7 +54,9 @@ Most content lives in `src/data/thermoLesson.ts`. Add or edit steps there using 
 - `body`
 - `equations`
 - `visualType`
+- `sceneData`
 - `example`
 - `exercise`
 
 For numerical exercises, add expected answers, tolerances, unit requirements, and common-mistake values in the `check.answerParts` array.
+For visual changes, attach `sceneData` to a step so the matching science scene can render from real values rather than fixed decoration.
