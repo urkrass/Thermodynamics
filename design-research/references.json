@@ -1,0 +1,812 @@
+[
+  {
+    "slug": "awwwards-gsap",
+    "source": "Awwwards",
+    "category": "GSAP, animation, interaction design",
+    "url": "https://www.awwwards.com/sites/gsap",
+    "title": "GSAP - Awwwards SOTD",
+    "notes": "Award reference for expressive but controlled animation language.",
+    "analysis": {
+      "layout": "Large central identity moment with supporting modules arranged as evidence below the fold.",
+      "typography": "Confident display type, short labels, and compressed supporting copy keep the first view direct.",
+      "whitespace": "Bold negative space around the brand mark gives motion room to breathe.",
+      "color": "Very tight two-color discipline creates instant recognizability.",
+      "motion": "Motion feels elastic and highly timed, with object behavior doing the storytelling.",
+      "interaction": "Hover and scroll affordances reward exploration without overexplaining.",
+      "usable": "Use the idea of one memorable kinetic science object paired with minimal instructional text.",
+      "mustNotCopy": "Do not copy the GSAP brand colors, logo, characters, screenshots, or exact elastic choreography."
+    },
+    "principles": [
+      "One visual thesis should dominate the viewport.",
+      "Motion should clarify material behavior, not decorate every element.",
+      "A tiny palette can feel premium when contrast is decisive.",
+      "Short interface labels outperform explanatory clutter.",
+      "Interactive objects need stable surrounding typography."
+    ],
+    "takeaways": [
+      "Make Gibbs energy feel like a live balance, not a stock illustration.",
+      "Use one accent color for feasibility and one neutral field for calculation.",
+      "Keep controls quiet so the scientific scene carries the sense of motion."
+    ]
+  },
+  {
+    "slug": "awwwards-made-with-gsap",
+    "source": "Awwwards",
+    "category": "GSAP collection, scroll interaction",
+    "url": "https://www.awwwards.com/sites/made-with-gsap",
+    "title": "Made With GSAP - Awwwards SOTD",
+    "notes": "Reference for compact animated examples and dark editorial rhythm.",
+    "analysis": {
+      "layout": "Dense index-like modules are balanced by a strong title system and restrained background.",
+      "typography": "Utility labels are small and precise while titles stay large and graphic.",
+      "whitespace": "Whitespace appears as gutters and pauses between motion samples rather than empty decoration.",
+      "color": "Dark surface with a single bright accent gives strong hierarchy.",
+      "motion": "Scroll and reveal motion has a catalog feel: repeatable, crisp, and inspectable.",
+      "interaction": "The page invites sampling; every module feels like a deliberate specimen.",
+      "usable": "The worksheet can treat examples as specimens with consistent rhythm and reveal timing.",
+      "mustNotCopy": "Do not copy the dark-neon palette, names, animation examples, or any site thumbnails."
+    },
+    "principles": [
+      "A catalog can still feel editorial if hierarchy is strict.",
+      "Bright accents work best when used sparingly.",
+      "Repeated modules need one shared geometry.",
+      "Motion samples should be inspectable and not chaotic.",
+      "Small metadata can add seriousness when typeset consistently."
+    ],
+    "takeaways": [
+      "Use calculation rows as disciplined specimens rather than loose cards.",
+      "Limit bright color to active progress and the result sign.",
+      "Let answer checking reveal with crisp, repeatable motion."
+    ]
+  },
+  {
+    "slug": "awwwards-webgl-collection",
+    "source": "Awwwards",
+    "category": "WebGL sites, immersive interaction",
+    "url": "https://www.awwwards.com/awwwards/collections/webgl/",
+    "title": "WEBGL - Awwwards Collection",
+    "notes": "Broad scan of immersive 3D and WebGL interactions.",
+    "analysis": {
+      "layout": "Reference tiles emphasize scene previews and concise categorization.",
+      "typography": "Neutral listing typography lets high-impact visuals lead.",
+      "whitespace": "Grid spacing keeps many visual references legible without heavy borders.",
+      "color": "The page lets reference imagery supply variety while the chrome stays minimal.",
+      "motion": "The collection foregrounds motion clips and interaction samples as primary content.",
+      "interaction": "Browsing is quick, visual, and filter-like rather than explanatory.",
+      "usable": "Use the browsing principle: students should instantly know where the active concept lives.",
+      "mustNotCopy": "Do not copy WebGL clips, thumbnails, project names, or award-gallery composition."
+    },
+    "principles": [
+      "Visual previews should be large enough to read behavior.",
+      "Interface chrome should recede behind the scientific scene.",
+      "Category labels can be useful when they are not decorative pills.",
+      "A grid needs strong alignment to avoid visual noise.",
+      "Motion references need still-state clarity."
+    ],
+    "takeaways": [
+      "The scientific visual should be sized as a primary teaching surface.",
+      "Section navigation should act like a quiet concept index.",
+      "Avoid tiny decorative molecule previews that cannot be inspected."
+    ]
+  },
+  {
+    "slug": "awwwards-react-websites",
+    "source": "Awwwards",
+    "category": "React websites",
+    "url": "https://www.awwwards.com/websites/react/",
+    "title": "Best React Websites - Awwwards",
+    "notes": "Reference for contemporary React site density and preview-led discovery.",
+    "analysis": {
+      "layout": "A filtered gallery uses a consistent content rail and visible preview hierarchy.",
+      "typography": "Readable sans-serif labels support scanning across many entries.",
+      "whitespace": "Wide gutters and repeated spacing prevent the gallery from collapsing into clutter.",
+      "color": "Neutral UI with occasional award/status contrast keeps attention on content.",
+      "motion": "Most motion is deferred to entries; the page itself stays controlled.",
+      "interaction": "Filtering and browsing are direct, with familiar listing behavior.",
+      "usable": "Borrow the measured density and predictable scanning for worksheet sections.",
+      "mustNotCopy": "Do not copy Awwwards gallery UI, awarded project thumbnails, or brand marks."
+    },
+    "principles": [
+      "Scannability is a visual quality, not just a UX feature.",
+      "Repeated items need identical baselines and label systems.",
+      "Neutral chrome can make content feel more serious.",
+      "Award-style badges are unnecessary in learning UI.",
+      "Density works when rhythm is exact."
+    ],
+    "takeaways": [
+      "Make section navigation scan like a curriculum index.",
+      "Use consistent baselines for problem data and solved steps.",
+      "Avoid celebratory badges that make the worksheet feel gamified."
+    ]
+  },
+  {
+    "slug": "awwwards-interaction-design",
+    "source": "Awwwards",
+    "category": "Interaction design",
+    "url": "https://www.awwwards.com/websites/interaction-design/",
+    "title": "Best Interaction Design Websites - Awwwards",
+    "notes": "Reference for interaction categories and high-end browsing surfaces.",
+    "analysis": {
+      "layout": "Filter controls, list entries, and previews share a calm content architecture.",
+      "typography": "Small labels and entry titles support quick decision-making.",
+      "whitespace": "The filtering column and content grid create a measured left-to-right flow.",
+      "color": "Color is informational rather than ornamental.",
+      "motion": "The interaction promise comes through preview media and hover states.",
+      "interaction": "The page is useful because interaction choices are visible and quickly reversible.",
+      "usable": "Borrow reversible navigation and visible status for worksheet movement.",
+      "mustNotCopy": "Do not copy project thumbnails, filters, tags, award labels, or exact page structure."
+    },
+    "principles": [
+      "Navigation should make state visible at rest.",
+      "Interaction controls need immediate reversibility.",
+      "Text rhythm matters in utility areas.",
+      "Visual previews should not fight controls.",
+      "Informational color beats decorative color."
+    ],
+    "takeaways": [
+      "Show current section, progress, and saved state in one calm header.",
+      "Keep previous/next controls predictable and non-theatrical.",
+      "Use color to explain status: incomplete, active, complete, correct."
+    ]
+  },
+  {
+    "slug": "awwwards-css-js-animation",
+    "source": "Awwwards",
+    "category": "CSS and JavaScript animation",
+    "url": "https://www.awwwards.com/awwwards/collections/css-js-animations/",
+    "title": "CSS and JS Animations - Awwwards Collection",
+    "notes": "Reference for curated motion specimens and interaction tags.",
+    "analysis": {
+      "layout": "Motion examples are treated as collected specimens with short descriptors.",
+      "typography": "Labels stay short, with enough contrast to support fast sorting.",
+      "whitespace": "Compact spacing is offset by consistent tile sizing.",
+      "color": "The gallery mostly avoids strong UI color so examples remain the focus.",
+      "motion": "Motion is varied but categorized, making experimentation feel controlled.",
+      "interaction": "Browsing depends on visual sampling and concise names.",
+      "usable": "Use a specimen-board mindset for thermodynamic methods and data sets.",
+      "mustNotCopy": "Do not copy animation clips, category labels verbatim, thumbnails, or gallery chrome."
+    },
+    "principles": [
+      "Experimental motion needs calm framing.",
+      "Categories should organize, not decorate.",
+      "Repeated preview sizing prevents chaos.",
+      "Still frames must read before animation begins.",
+      "Microcopy should be concrete."
+    ],
+    "takeaways": [
+      "Frame formula variants as specimens with stable geometry.",
+      "Make each scene legible without relying on animation.",
+      "Use concise labels like enthalpy, entropy, temperature, feasibility."
+    ]
+  },
+  {
+    "slug": "codrops-webzibition",
+    "source": "Codrops",
+    "category": "Webzibition, curated creative websites",
+    "url": "https://tympanus.net/codrops/webzibition/",
+    "title": "Webzibition - Codrops",
+    "notes": "Reference for editorial curation without generic dashboard styling.",
+    "analysis": {
+      "layout": "A chronological editorial index uses rows, dates, and generous text spacing.",
+      "typography": "The typography feels like a design journal: direct, confident, and readable.",
+      "whitespace": "Vertical spacing creates a calm archive rhythm.",
+      "color": "Mostly neutral color lets content hierarchy and dates do the work.",
+      "motion": "Motion is secondary to browsing and discovery.",
+      "interaction": "Simple list interaction communicates credibility through restraint.",
+      "usable": "Use editorial row rhythm for section navigation and solved example data.",
+      "mustNotCopy": "Do not copy Webzibition entries, wording, layout details, or brand styling."
+    },
+    "principles": [
+      "A learning interface can feel editorial without becoming a magazine page.",
+      "Rows can be richer than cards when spacing is elegant.",
+      "Dates/status markers create rhythm when kept small.",
+      "Neutral backgrounds can feel designed if hierarchy is sharp.",
+      "Archive-like structure supports serious study."
+    ],
+    "takeaways": [
+      "Replace generic cards with clean rows for values and workings.",
+      "Use a study-journal tone for labels and saved progress.",
+      "Let section navigation be a curriculum archive rather than a dropdown toy."
+    ]
+  },
+  {
+    "slug": "codrops-on-scroll-typography",
+    "source": "Codrops",
+    "category": "Typography animation, GSAP",
+    "url": "https://tympanus.net/Development/OnScrollTypographyAnimations/",
+    "title": "On-Scroll Typography Animations - Codrops",
+    "notes": "Reference for expressive type motion with long-form reading.",
+    "analysis": {
+      "layout": "Long text blocks become spatial events, with each section owning a clear vertical moment.",
+      "typography": "Display type is dramatic while body text remains readable.",
+      "whitespace": "Large vertical intervals turn scrolling into pacing.",
+      "color": "Color stays restrained so motion and type carry the effect.",
+      "motion": "Scroll-triggered type transforms are slow enough to perceive and tied to reading progress.",
+      "interaction": "The primary interaction is scroll, with no extra controls fighting the content.",
+      "usable": "Borrow restrained type reveals for formulas and solved steps.",
+      "mustNotCopy": "Do not copy poem text, exact transforms, type settings, or demo imagery."
+    },
+    "principles": [
+      "Motion can be typographic and educational.",
+      "A formula reveal should follow reading order.",
+      "Scroll rhythm can create comprehension pauses.",
+      "Body text must remain calmer than display text.",
+      "Large type needs simple surroundings."
+    ],
+    "takeaways": [
+      "Reveal solved working line by line with measured vertical motion.",
+      "Use formula scale as a teaching moment, not just decoration.",
+      "Avoid animating every paragraph; reserve motion for conceptual shifts."
+    ]
+  },
+  {
+    "slug": "codrops-scroll-text-motion",
+    "source": "Codrops",
+    "category": "Scroll text motion, typography, GSAP",
+    "url": "https://tympanus.net/Development/ScrollTextMotion/",
+    "title": "On-Scroll Text Motion - Codrops",
+    "notes": "Reference for dense kinetic text fields and atmospheric restraint.",
+    "analysis": {
+      "layout": "A deep text field creates an immersive plane rather than separate cards.",
+      "typography": "Mono-like and compact text fragments create texture while key words stand out.",
+      "whitespace": "Whitespace is embedded as gaps in the field instead of blank panels.",
+      "color": "Dark-muted color makes small luminous accents feel intentional.",
+      "motion": "Motion is ambient and layered, suggesting depth without a 3D object.",
+      "interaction": "Scrolling modulates the field; the user feels like they are scanning an instrument.",
+      "usable": "Use subtle scientific field labels behind a Gibbs diagram for atmosphere.",
+      "mustNotCopy": "Do not copy text strings, Japanese fragments, exact dark palette, or animations."
+    },
+    "principles": [
+      "A background can carry semantic texture.",
+      "Small labels must be optically quiet.",
+      "Depth can come from layered opacity, not fake windows.",
+      "A serious interface can still feel atmospheric.",
+      "Ambient motion should never reduce legibility."
+    ],
+    "takeaways": [
+      "Add faint thermodynamic terms and grid lines to the visual field.",
+      "Keep worksheet text on a calm foreground layer.",
+      "Use background motion as a slow system pulse."
+    ]
+  },
+  {
+    "slug": "codrops-horizontal-smooth-scroll",
+    "source": "Codrops",
+    "category": "Horizontal layout, smooth scroll",
+    "url": "https://tympanus.net/Development/HorizontalSmoothScrollLayout/",
+    "title": "Horizontal Smooth Scroll Layout - Codrops",
+    "notes": "Reference for sequencing content with lateral rhythm.",
+    "analysis": {
+      "layout": "Large lateral panels create sequence and anticipation.",
+      "typography": "Numbers, titles, and tags form a compact navigation grammar.",
+      "whitespace": "Spacing between panels creates a gallery-like tempo.",
+      "color": "Image-led color is framed by restrained UI treatment.",
+      "motion": "Smooth horizontal motion changes perceived structure without adding more chrome.",
+      "interaction": "Navigation feels spatial and progress-aware.",
+      "usable": "Borrow the sense of step sequence while keeping worksheet controls vertical and accessible.",
+      "mustNotCopy": "Do not copy images, panel titles, horizontal scrolling mechanics, or decorative tags."
+    },
+    "principles": [
+      "A step sequence can feel spatial.",
+      "Numbering can be elegant when restrained.",
+      "Large panels need few controls.",
+      "Motion should support orientation.",
+      "Gallery pacing can make practice less tedious."
+    ],
+    "takeaways": [
+      "Use step count as quiet typographic structure.",
+      "Let next/back movement feel like moving through a sequence.",
+      "Avoid forced horizontal scroll for the actual worksheet."
+    ]
+  },
+  {
+    "slug": "codrops-on-scroll-columns-rows",
+    "source": "Codrops",
+    "category": "Scroll-based layout animation",
+    "url": "https://tympanus.net/Development/OnScrollColumnsRows/",
+    "title": "On-Scroll Column and Row Animations - Codrops",
+    "notes": "Reference for motion in structured columns and rows.",
+    "analysis": {
+      "layout": "Columns and rows are the visible design material, not hidden implementation detail.",
+      "typography": "Text stays subordinate to motion architecture.",
+      "whitespace": "Gutters become motion tracks and maintain order.",
+      "color": "Neutral or image-led color keeps the grid readable.",
+      "motion": "Rows and columns shift as groups, making motion feel structural.",
+      "interaction": "Scroll translates layout structure into movement.",
+      "usable": "Borrow grouped motion for data rows and scientific quantities.",
+      "mustNotCopy": "Do not copy demo images, timing curves, exact row animations, or titles."
+    },
+    "principles": [
+      "Animate groups instead of loose individual fragments.",
+      "Gutters can become part of the visual system.",
+      "Rows are valid high-end UI material.",
+      "Structural motion feels more mature than decorative motion.",
+      "Repeating units need clear alignment anchors."
+    ],
+    "takeaways": [
+      "Move solved working rows as a coherent stack.",
+      "Align equation, values, and answer input to the same grid.",
+      "Use the right-side scene as a structural column, not pasted art."
+    ]
+  },
+  {
+    "slug": "codrops-scroll-3d-grid",
+    "source": "Codrops",
+    "category": "3D grid animation",
+    "url": "https://tympanus.net/Development/Scroll3DGrid/",
+    "title": "On-Scroll Perspective Grid Animations - Codrops",
+    "notes": "Reference for dimensional grid fields without dashboard aesthetics.",
+    "analysis": {
+      "layout": "A perspective grid creates depth while the text remains minimal.",
+      "typography": "Short phrases work because the spatial treatment is strong.",
+      "whitespace": "The scene breathes through empty perspective space.",
+      "color": "Muted tones prevent the 3D effect from becoming game-like.",
+      "motion": "Perspective motion is slow and scroll-bound.",
+      "interaction": "The page uses viewing angle as the main interaction payoff.",
+      "usable": "Borrow subtle perspective for thermodynamic energy levels and particle fields.",
+      "mustNotCopy": "Do not copy the exact 3D grid, phrases, or camera movement."
+    },
+    "principles": [
+      "Depth can be subtle and still compelling.",
+      "Short labels pair well with complex geometry.",
+      "Perspective needs a calm color system.",
+      "A science scene should have clear axes or anchors.",
+      "Avoid playful 3D exaggeration in educational UI."
+    ],
+    "takeaways": [
+      "Use a restrained perspective grid behind the Gibbs balance.",
+      "Anchor particles and bars to a visible scientific plane.",
+      "Keep the calculation panel flat and legible."
+    ]
+  },
+  {
+    "slug": "codrops-svg-filter-text",
+    "source": "Codrops",
+    "category": "SVG filter text animation",
+    "url": "https://tympanus.net/Development/OnScrollSVGFilterText/",
+    "title": "On-Scroll SVG Filter Animations on Text - Codrops",
+    "notes": "Reference for text effects that remain graphic rather than noisy.",
+    "analysis": {
+      "layout": "Each text effect is isolated enough to inspect.",
+      "typography": "Large text works as both content and visual object.",
+      "whitespace": "Sections are given enough room for the filter effect to resolve.",
+      "color": "Strong contrast supports experimental filter treatment.",
+      "motion": "Distortion is localized, replayable, and clearly bounded.",
+      "interaction": "Replay controls and scroll moments make effects understandable.",
+      "usable": "Use localized emphasis for unit warnings and sign changes.",
+      "mustNotCopy": "Do not copy text, filter recipes, exact distortions, or replay UI."
+    },
+    "principles": [
+      "Experimental effects need boundaries.",
+      "Emphasis works best when rare.",
+      "Readable first, expressive second.",
+      "Replayable motion can teach cause and effect.",
+      "Distortion belongs on labels, not core body text."
+    ],
+    "takeaways": [
+      "Make the Delta S unit conversion warning visually distinct but readable.",
+      "Use a subtle sign-change pulse on Delta G results.",
+      "Avoid filter effects on long theory paragraphs."
+    ]
+  },
+  {
+    "slug": "codrops-on-scroll-path",
+    "source": "Codrops",
+    "category": "Path animation, scroll interaction",
+    "url": "https://tympanus.net/Tutorials/OnScrollPathAnimations/",
+    "title": "On Scroll Path Animations - Codrops",
+    "notes": "Reference for scroll-linked paths and guided reading.",
+    "analysis": {
+      "layout": "Animated paths create a route through otherwise sparse editorial sections.",
+      "typography": "Type is poetic and sparse, letting the path command the eye.",
+      "whitespace": "Large open areas make path movement visible.",
+      "color": "Limited contrast keeps the linework crisp.",
+      "motion": "Path drawing creates anticipation and direction.",
+      "interaction": "Scroll is a guided journey along a visible trace.",
+      "usable": "Use traced lines to connect enthalpy, entropy, temperature, and Gibbs outcome.",
+      "mustNotCopy": "Do not copy the path shapes, text, tutorial styling, or line animation exactly."
+    },
+    "principles": [
+      "Lines can guide comprehension.",
+      "A path should connect meaningful points.",
+      "Sparse layouts make motion easier to parse.",
+      "Line animation is useful for process explanations.",
+      "Decorative paths become weak if they do not explain."
+    ],
+    "takeaways": [
+      "Draw a subtle relationship line from formula terms to the visual balance.",
+      "Use connecting rules rather than heavy boxes.",
+      "Make the path educational: values flow into Delta G."
+    ]
+  },
+  {
+    "slug": "observable-zoomable-circle-packing",
+    "source": "Observable",
+    "category": "Interactive data visualization",
+    "url": "https://observablehq.com/@mbostock/d3-zoomable-circle-packing",
+    "title": "Zoomable Circle Packing - Observable",
+    "notes": "Reference for elegant hierarchy and data-centered interaction.",
+    "analysis": {
+      "layout": "The visualization is the central object with explanatory notebook context around it.",
+      "typography": "Notebook typography is utilitarian, letting the data object dominate.",
+      "whitespace": "The circular composition creates its own internal spacing.",
+      "color": "Sequential color supports hierarchy without excessive decoration.",
+      "motion": "Zoom motion changes scale while preserving orientation.",
+      "interaction": "Click-to-zoom is direct and discoverable through the object itself.",
+      "usable": "Borrow scale-preserving transitions for moving between overview and detail.",
+      "mustNotCopy": "Do not copy the dataset, exact circle layout, colors, or notebook code."
+    },
+    "principles": [
+      "Data visuals can be both minimal and memorable.",
+      "Interaction should happen on the meaningful object.",
+      "Transitions must preserve spatial orientation.",
+      "Color should encode hierarchy or state.",
+      "Notebook restraint fits serious learning."
+    ],
+    "takeaways": [
+      "Let students interact with the scientific visual directly when useful.",
+      "Use color encodings consistently for terms and signs.",
+      "Keep explanatory text outside the visual but aligned to it."
+    ]
+  },
+  {
+    "slug": "observable-force-directed-graph",
+    "source": "Observable",
+    "category": "Interactive network visualization",
+    "url": "https://observablehq.com/@d3/force-directed-graph",
+    "title": "Force-Directed Graph - Observable",
+    "notes": "Reference for particle-like systems with physical constraints.",
+    "analysis": {
+      "layout": "A single dynamic graph is centered and allowed to behave according to simple rules.",
+      "typography": "Labels and notebook copy stay quiet so the graph remains readable.",
+      "whitespace": "Open canvas space makes node movement legible.",
+      "color": "Color is categorical and restrained.",
+      "motion": "Physics-based movement is purposeful and bounded.",
+      "interaction": "Drag interaction reveals the system model.",
+      "usable": "Borrow bounded particle motion for entropy and molecular dispersion scenes.",
+      "mustNotCopy": "Do not copy graph data, node layout, exact colors, or notebook code."
+    },
+    "principles": [
+      "Simulated motion needs constraints.",
+      "Open canvas space improves legibility.",
+      "Physics can make abstract concepts tangible.",
+      "Labels should not crowd dynamic marks.",
+      "User manipulation should teach the model."
+    ],
+    "takeaways": [
+      "Keep particle scenes bounded and purposeful.",
+      "Use movement to show dispersal, not random decoration.",
+      "Avoid overcrowding the visual with labels."
+    ]
+  },
+  {
+    "slug": "observable-brushable-scatterplot-matrix",
+    "source": "Observable",
+    "category": "Interactive statistical visualization",
+    "url": "https://observablehq.com/@d3/brushable-scatterplot-matrix",
+    "title": "Brushable Scatterplot Matrix - Observable",
+    "notes": "Reference for scientific UI density with controlled interaction.",
+    "analysis": {
+      "layout": "A matrix creates many views while preserving a clear repeated cell system.",
+      "typography": "Axis labels and cell labels are compact and consistent.",
+      "whitespace": "Small multiples rely on tight but exact gutters.",
+      "color": "Selection color is the only strong accent.",
+      "motion": "Motion is minimal; interaction state carries the experience.",
+      "interaction": "Brushing gives immediate feedback and cross-view linkage.",
+      "usable": "Borrow the disciplined small-multiple rhythm for values and method comparison.",
+      "mustNotCopy": "Do not copy the dataset, chart layout, code, or exact selection styling."
+    },
+    "principles": [
+      "Density can be elegant through repetition.",
+      "Selection state needs a clear visual language.",
+      "Small labels must be perfectly consistent.",
+      "Interaction can replace animation when clarity matters.",
+      "Gutters are part of the design system."
+    ],
+    "takeaways": [
+      "Use exact alignment for data values and result feedback.",
+      "Make selected choices visibly connected to feedback.",
+      "Avoid spacious cards that waste problem-solving space."
+    ]
+  },
+  {
+    "slug": "observable-stacked-to-grouped-bars",
+    "source": "Observable",
+    "category": "Animated quantitative transition",
+    "url": "https://observablehq.com/@d3/stacked-to-grouped-bars",
+    "title": "Stacked to Grouped Bars - Observable",
+    "notes": "Reference for animated state transitions between quantitative views.",
+    "analysis": {
+      "layout": "Bars occupy a clear plotting area with simple controls.",
+      "typography": "Labels are functional and secondary.",
+      "whitespace": "Chart margins create legible axes and motion room.",
+      "color": "Color groups encode categories without excess styling.",
+      "motion": "Animated transitions preserve identity across view changes.",
+      "interaction": "Toggling changes structure while keeping data recognizable.",
+      "usable": "Borrow identity-preserving transitions for Delta H and T Delta S terms.",
+      "mustNotCopy": "Do not copy chart data, exact colors, or D3 implementation."
+    },
+    "principles": [
+      "Animate between states without losing identity.",
+      "Controls should be simpler than the visualization.",
+      "Color groups need a stable legend logic.",
+      "Quantitative marks need enough margin.",
+      "A transition can explain a calculation."
+    ],
+    "takeaways": [
+      "Show Delta H and T Delta S as stable terms that combine into Delta G.",
+      "Keep formula term colors consistent across text and visual.",
+      "Use motion to show subtraction, not just arrival."
+    ]
+  },
+  {
+    "slug": "observable-hierarchical-edge-bundling",
+    "source": "Observable",
+    "category": "Network hierarchy visualization",
+    "url": "https://observablehq.com/@d3/hierarchical-edge-bundling",
+    "title": "Hierarchical Edge Bundling - Observable",
+    "notes": "Reference for line density and organized complexity.",
+    "analysis": {
+      "layout": "A radial structure turns many connections into an inspectable composition.",
+      "typography": "Labels sit around the system and support exploration.",
+      "whitespace": "Empty center and margins keep line density from overwhelming.",
+      "color": "Lines and labels use restrained contrast.",
+      "motion": "Hover and highlighting are more important than continuous animation.",
+      "interaction": "Inspection reveals local relationships inside a complex whole.",
+      "usable": "Borrow fine linework and hover emphasis for formula relationships.",
+      "mustNotCopy": "Do not copy the dataset, radial layout, edge shapes, or code."
+    },
+    "principles": [
+      "Complexity needs a governing geometry.",
+      "Fine linework can feel premium when restrained.",
+      "Highlighting should clarify one relationship at a time.",
+      "Margins prevent dense visuals from feeling messy.",
+      "Labels belong on the structure, not floating randomly."
+    ],
+    "takeaways": [
+      "Use fine connecting lines between formula terms and data values.",
+      "Let only the active relationship brighten.",
+      "Avoid dense decorative webs with no instructional meaning."
+    ]
+  },
+  {
+    "slug": "observable-wealth-health-nations",
+    "source": "Observable",
+    "category": "Animated data storytelling",
+    "url": "https://observablehq.com/@d3/the-wealth-health-of-nations",
+    "title": "The Wealth and Health of Nations - Observable",
+    "notes": "Reference for animated story over quantitative marks.",
+    "analysis": {
+      "layout": "The chart has a clear stage, with time and labels supporting story.",
+      "typography": "Annotations and labels are minimal but informative.",
+      "whitespace": "A wide plot area allows movement and comparison.",
+      "color": "Categorical color supports grouping while preserving readability.",
+      "motion": "Temporal animation lets the learner track change over time.",
+      "interaction": "Playback-style interaction frames data as a story.",
+      "usable": "Borrow the idea of a scientific stage with values moving through conditions.",
+      "mustNotCopy": "Do not copy data, labels, colors, or animation implementation."
+    },
+    "principles": [
+      "A visual stage can make quantitative change memorable.",
+      "Animation should support tracking over time.",
+      "Labels must be sparse and attached to marks.",
+      "Controls should feel secondary to the data.",
+      "Storytelling works when axes stay stable."
+    ],
+    "takeaways": [
+      "Use temperature as a changing condition in the side scene.",
+      "Keep axes and thresholds stable while values move.",
+      "Do not turn the worksheet into a data dashboard."
+    ]
+  },
+  {
+    "slug": "distill-feature-visualization",
+    "source": "Distill",
+    "category": "Scientific editorial, interactive explanation",
+    "url": "https://distill.pub/2017/feature-visualization/",
+    "title": "Feature Visualization - Distill",
+    "notes": "Reference for rigorous scientific explanation with visual artifacts.",
+    "analysis": {
+      "layout": "A research-article structure mixes text, equations, figures, and callouts with discipline.",
+      "typography": "Serif and sans-serif hierarchy gives academic credibility without looking dated.",
+      "whitespace": "Generous margins make dense ideas approachable.",
+      "color": "Figures carry color while the page typography remains restrained.",
+      "motion": "Interaction and animation are used to clarify mechanisms, not as spectacle.",
+      "interaction": "Figures invite inspection and support the argument directly.",
+      "usable": "Borrow the scientific editorial cadence for theory, example, and exercise sections.",
+      "mustNotCopy": "Do not copy figures, diagrams, article text, typography pairing, or layouts exactly."
+    },
+    "principles": [
+      "Scientific credibility comes from hierarchy and restraint.",
+      "Figures should be integrated with the argument.",
+      "Margins can make dense content less intimidating.",
+      "Color belongs mainly in figures and status.",
+      "Interactive explanation must support a claim."
+    ],
+    "takeaways": [
+      "Treat the side visual as a figure tied to current theory.",
+      "Use academic spacing without making the interface static.",
+      "Keep equations and body text in a serious editorial rhythm."
+    ]
+  },
+  {
+    "slug": "distill-circuits-zoom-in",
+    "source": "Distill",
+    "category": "Scientific interactive article",
+    "url": "https://distill.pub/2020/circuits/zoom-in/",
+    "title": "Zoom In - Distill Circuits",
+    "notes": "Reference for guided zoom from overview to mechanism.",
+    "analysis": {
+      "layout": "Explanatory prose and figures alternate in a guided deepening sequence.",
+      "typography": "Academic typography keeps authority while captions stay approachable.",
+      "whitespace": "Figure spacing creates mental reset points.",
+      "color": "Diagram color is purposeful and generally tied to meaning.",
+      "motion": "Zooming and focus transitions support layered understanding.",
+      "interaction": "Users inspect details at multiple scales without leaving the article flow.",
+      "usable": "Borrow overview-to-detail movement for formula, values, and result.",
+      "mustNotCopy": "Do not copy neural circuit diagrams, figure styles, captions, or article structure exactly."
+    },
+    "principles": [
+      "Move from overview to mechanism.",
+      "Figures and captions should share a rhythm.",
+      "Scale changes are powerful when anchored.",
+      "Color must map to meaning.",
+      "Interactive details should never break reading flow."
+    ],
+    "takeaways": [
+      "Let students move from equation overview to worked numerical detail.",
+      "Use the visual to zoom conceptually from terms to feasibility.",
+      "Caption the side scene with the exact concept being shown."
+    ]
+  },
+  {
+    "slug": "ciechanowski-mechanical-watch",
+    "source": "Other scientific/editorial",
+    "category": "Explorable technical explanation",
+    "url": "https://ciechanow.ski/mechanical-watch/",
+    "title": "Mechanical Watch - Bartosz Ciechanowski",
+    "notes": "Reference for precise interactive technical visuals.",
+    "analysis": {
+      "layout": "Long-form explanatory text is repeatedly anchored by high-quality interactive figures.",
+      "typography": "Readable article typography keeps the mechanics approachable.",
+      "whitespace": "Figures breathe with enough space for inspection.",
+      "color": "Mechanical colors are controlled and tied to material/state.",
+      "motion": "Motion is physically motivated and beautiful because it explains mechanism.",
+      "interaction": "Users can inspect, rotate, and understand parts through direct manipulation.",
+      "usable": "Borrow physically motivated motion and precise figure integration.",
+      "mustNotCopy": "Do not copy models, diagrams, article text, colors, or interaction implementation."
+    },
+    "principles": [
+      "Mechanism-led visuals feel premium and educational.",
+      "Motion should obey an understandable model.",
+      "Figures need enough space to inspect details.",
+      "Technical interfaces can be warm without decoration.",
+      "Direct manipulation deepens understanding."
+    ],
+    "takeaways": [
+      "Make the Gibbs balance obey a clear physical metaphor.",
+      "Use exact labels and term values near the visual.",
+      "Avoid ornamental particles that do not explain."
+    ]
+  },
+  {
+    "slug": "ciechanowski-internal-combustion",
+    "source": "Other scientific/editorial",
+    "category": "Explorable engineering explanation",
+    "url": "https://ciechanow.ski/internal-combustion-engine/",
+    "title": "Internal Combustion Engine - Bartosz Ciechanowski",
+    "notes": "Reference for layered explanation and animated physical cycles.",
+    "analysis": {
+      "layout": "Text and interactive diagrams alternate to explain complex staged processes.",
+      "typography": "Clear article type supports long reading sessions.",
+      "whitespace": "Whitespace separates process stages and keeps diagrams inspectable.",
+      "color": "Color is tied to material and state changes.",
+      "motion": "Cyclic motion reinforces process understanding.",
+      "interaction": "Direct controls expose how each parameter changes the mechanism.",
+      "usable": "Borrow stage-based process visualization for thermodynamic calculation steps.",
+      "mustNotCopy": "Do not copy diagrams, engine models, article prose, or animation mechanics exactly."
+    },
+    "principles": [
+      "Processes become understandable through staged animation.",
+      "Parameters should visibly affect the figure.",
+      "Captions must be close to the visual they explain.",
+      "Color should mark state, not mood.",
+      "Complexity can be taught through patient sequencing."
+    ],
+    "takeaways": [
+      "Represent formula terms as a staged process: inputs, conversion, result.",
+      "Let the visual change when moving through Gibbs-related steps.",
+      "Keep teaching captions adjacent to the scene."
+    ]
+  },
+  {
+    "slug": "seeing-theory-basic-probability",
+    "source": "Other scientific/editorial",
+    "category": "Interactive learning visualization",
+    "url": "https://seeing-theory.brown.edu/basic-probability/index.html",
+    "title": "Seeing Theory - Basic Probability",
+    "notes": "Reference for student-friendly interactive math without childish UI.",
+    "analysis": {
+      "layout": "Modules combine short theory, interaction, and visualization in a clean learning flow.",
+      "typography": "Friendly but restrained typography supports accessibility.",
+      "whitespace": "Modules have enough space to play with the concept.",
+      "color": "Color is cheerful but disciplined and tied to visual categories.",
+      "motion": "Motion illustrates probability events and outcomes.",
+      "interaction": "Controls are simple and directly connected to the visual result.",
+      "usable": "Borrow approachable scientific controls and module pacing.",
+      "mustNotCopy": "Do not copy illustrations, layouts, text, color palette, or interaction examples."
+    },
+    "principles": [
+      "Learning modules need immediate visual feedback.",
+      "Friendly does not require childish decoration.",
+      "Controls should sit near the concept they affect.",
+      "Color can be inviting and still systematic.",
+      "Short theory plus interactive figure is a strong pattern."
+    ],
+    "takeaways": [
+      "Keep answer input close to prompt and feedback.",
+      "Make the side visual feel approachable but precise.",
+      "Avoid game-like rewards and oversized badges."
+    ]
+  },
+  {
+    "slug": "ncase-trust",
+    "source": "Other interactive editorial",
+    "category": "Explorable explanation",
+    "url": "https://ncase.me/trust/",
+    "title": "The Evolution of Trust - Nicky Case",
+    "notes": "Reference for guided interaction and concept progression.",
+    "analysis": {
+      "layout": "A narrative sequence alternates explanation with playable simulations.",
+      "typography": "Conversational copy is clear and structured around the interaction.",
+      "whitespace": "Each stage is isolated enough for the learner to focus.",
+      "color": "Color is systematic, playful, and tied to roles.",
+      "motion": "Animation is direct, readable, and tied to simulation events.",
+      "interaction": "The learner advances by testing rules and seeing consequences.",
+      "usable": "Borrow guided progression and direct consequence feedback, with more restrained styling.",
+      "mustNotCopy": "Do not copy characters, copy, simulations, colors, illustrations, or interaction structure."
+    },
+    "principles": [
+      "Narrative progression helps learners tolerate complexity.",
+      "Interaction should reveal consequences.",
+      "Each stage needs a focused goal.",
+      "Friendly copy must still be concise.",
+      "Simulation feedback should be immediate."
+    ],
+    "takeaways": [
+      "Make each worksheet step feel like one focused concept.",
+      "Let answer feedback explain consequence, not just correctness.",
+      "Keep the visual adult and chemistry-specific, not cartoon-like."
+    ]
+  },
+  {
+    "slug": "pudding-pockets",
+    "source": "Other editorial/data",
+    "category": "Interactive editorial data story",
+    "url": "https://pudding.cool/2018/08/pockets/",
+    "title": "Women's Pockets Are Inferior - The Pudding",
+    "notes": "Reference for editorial data storytelling and tangible measurement visuals.",
+    "analysis": {
+      "layout": "The story combines strong editorial sections with measured, tangible visual comparisons.",
+      "typography": "Editorial type gives authority while annotations keep the data human.",
+      "whitespace": "Section breaks create rhythm and prevent data fatigue.",
+      "color": "Color supports comparison and editorial tone without overpowering the story.",
+      "motion": "Motion and scroll sequencing reveal evidence progressively.",
+      "interaction": "Interaction focuses attention on comparison and measurement.",
+      "usable": "Borrow tangible measurement treatment for thermodynamic values.",
+      "mustNotCopy": "Do not copy article content, imagery, measurements, typography, colors, or scroll treatments."
+    },
+    "principles": [
+      "Make abstract values tangible.",
+      "Progressive evidence beats one large dump of data.",
+      "Annotations should be short and close to data.",
+      "Editorial tone can coexist with quantitative clarity.",
+      "Comparisons need consistent scale."
+    ],
+    "takeaways": [
+      "Show Delta H and T Delta S on a comparable scale.",
+      "Reveal worked data progressively.",
+      "Use annotations to clarify sign and units near the numbers."
+    ]
+  }
+]

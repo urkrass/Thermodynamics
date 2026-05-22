@@ -1,0 +1,245 @@
+[
+  {
+    "slug": "awwwards-gsap",
+    "url": "https://www.awwwards.com/sites/gsap",
+    "title": "GSAP - Awwwards SOTD",
+    "category": "GSAP, animation, interaction design",
+    "screenshot": "design-research/screenshots/awwwards-gsap.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-gsap-full.png",
+    "ok": true
+  },
+  {
+    "slug": "awwwards-made-with-gsap",
+    "url": "https://www.awwwards.com/sites/made-with-gsap",
+    "title": "Made With Gsap - Awwwards SOTD",
+    "category": "GSAP collection, scroll interaction",
+    "screenshot": "design-research/screenshots/awwwards-made-with-gsap.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-made-with-gsap-full.png",
+    "ok": true
+  },
+  {
+    "slug": "awwwards-webgl-collection",
+    "url": "https://www.awwwards.com/awwwards/collections/webgl/",
+    "title": "WebGL - Awwwards",
+    "category": "WebGL sites, immersive interaction",
+    "screenshot": "design-research/screenshots/awwwards-webgl-collection.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-webgl-collection-full.png",
+    "ok": true
+  },
+  {
+    "slug": "awwwards-react-websites",
+    "url": "https://www.awwwards.com/websites/react/",
+    "title": "Best React﻿ Websites | Web Design Inspiration",
+    "category": "React websites",
+    "screenshot": "design-research/screenshots/awwwards-react-websites.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-react-websites-full.png",
+    "ok": true
+  },
+  {
+    "slug": "awwwards-interaction-design",
+    "url": "https://www.awwwards.com/websites/interaction-design/",
+    "title": "Best Interaction Design websites | Web Design Inspiration",
+    "category": "Interaction design",
+    "screenshot": "design-research/screenshots/awwwards-interaction-design.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-interaction-design-full.png",
+    "ok": true
+  },
+  {
+    "slug": "awwwards-css-js-animation",
+    "url": "https://www.awwwards.com/awwwards/collections/css-js-animations/",
+    "title": "CSS & JS Animations - Awwwards",
+    "category": "CSS and JavaScript animation",
+    "screenshot": "design-research/screenshots/awwwards-css-js-animation.png",
+    "fullPageScreenshot": "design-research/screenshots/awwwards-css-js-animation-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-webzibition",
+    "url": "https://tympanus.net/codrops/webzibition/",
+    "title": "Webzibition | Codrops",
+    "category": "Webzibition, curated creative websites",
+    "screenshot": "design-research/screenshots/codrops-webzibition.png",
+    "fullPageScreenshot": "design-research/screenshots/codrops-webzibition-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-on-scroll-typography",
+    "url": "https://tympanus.net/Development/OnScrollTypographyAnimations/",
+    "title": "On-Scroll Typography Animations | Set 1 | Codrops",
+    "category": "Typography animation, GSAP",
+    "screenshot": "design-research/screenshots/codrops-on-scroll-typography.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "codrops-scroll-text-motion",
+    "url": "https://tympanus.net/Development/ScrollTextMotion/",
+    "title": "On-Scroll Text Motion | Codrops",
+    "category": "Scroll text motion, typography, GSAP",
+    "screenshot": "design-research/screenshots/codrops-scroll-text-motion.png",
+    "fullPageScreenshot": "design-research/screenshots/codrops-scroll-text-motion-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-horizontal-smooth-scroll",
+    "url": "https://tympanus.net/Development/HorizontalSmoothScrollLayout/",
+    "title": "Horizontal Smooth Scroll Layout | Demo 1 | Codrops",
+    "category": "Horizontal layout, smooth scroll",
+    "screenshot": "design-research/screenshots/codrops-horizontal-smooth-scroll.png",
+    "fullPageScreenshot": "design-research/screenshots/codrops-horizontal-smooth-scroll-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-on-scroll-columns-rows",
+    "url": "https://tympanus.net/Development/OnScrollColumnsRows/",
+    "title": "On-Scroll Column & Row Animations | Demo 1 | Codrops",
+    "category": "Scroll-based layout animation",
+    "screenshot": "design-research/screenshots/codrops-on-scroll-columns-rows.png",
+    "fullPageScreenshot": "design-research/screenshots/codrops-on-scroll-columns-rows-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-scroll-3d-grid",
+    "url": "https://tympanus.net/Development/Scroll3DGrid/",
+    "title": "On-Scroll 3D Grid Animations | Codrops",
+    "category": "3D grid animation",
+    "screenshot": "design-research/screenshots/codrops-scroll-3d-grid.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "codrops-svg-filter-text",
+    "url": "https://tympanus.net/Development/OnScrollSVGFilterText/",
+    "title": "On-Scroll SVG Filter Animations on Text | Codrops",
+    "category": "SVG filter text animation",
+    "screenshot": "design-research/screenshots/codrops-svg-filter-text.png",
+    "fullPageScreenshot": "design-research/screenshots/codrops-svg-filter-text-full.png",
+    "ok": true
+  },
+  {
+    "slug": "codrops-on-scroll-path",
+    "url": "https://tympanus.net/Tutorials/OnScrollPathAnimations/",
+    "title": "On-Scroll Path Animations | Codrops",
+    "category": "Path animation, scroll interaction",
+    "screenshot": "design-research/screenshots/codrops-on-scroll-path.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "observable-zoomable-circle-packing",
+    "url": "https://observablehq.com/@mbostock/d3-zoomable-circle-packing",
+    "title": "Zoomable circle packing / D3 | Observable",
+    "category": "Interactive data visualization",
+    "screenshot": "design-research/screenshots/observable-zoomable-circle-packing.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-zoomable-circle-packing-full.png",
+    "ok": true
+  },
+  {
+    "slug": "observable-force-directed-graph",
+    "url": "https://observablehq.com/@d3/force-directed-graph",
+    "title": "Force-directed graph component / D3 | Observable",
+    "category": "Interactive network visualization",
+    "screenshot": "design-research/screenshots/observable-force-directed-graph.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-force-directed-graph-full.png",
+    "ok": true
+  },
+  {
+    "slug": "observable-brushable-scatterplot-matrix",
+    "url": "https://observablehq.com/@d3/brushable-scatterplot-matrix",
+    "title": "Brushable scatterplot matrix / D3 | Observable",
+    "category": "Interactive statistical visualization",
+    "screenshot": "design-research/screenshots/observable-brushable-scatterplot-matrix.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-brushable-scatterplot-matrix-full.png",
+    "ok": true
+  },
+  {
+    "slug": "observable-stacked-to-grouped-bars",
+    "url": "https://observablehq.com/@d3/stacked-to-grouped-bars",
+    "title": "Stacked-to-grouped bars / D3 | Observable",
+    "category": "Animated quantitative transition",
+    "screenshot": "design-research/screenshots/observable-stacked-to-grouped-bars.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-stacked-to-grouped-bars-full.png",
+    "ok": true
+  },
+  {
+    "slug": "observable-hierarchical-edge-bundling",
+    "url": "https://observablehq.com/@d3/hierarchical-edge-bundling",
+    "title": "Hierarchical edge bundling / D3 | Observable",
+    "category": "Network hierarchy visualization",
+    "screenshot": "design-research/screenshots/observable-hierarchical-edge-bundling.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-hierarchical-edge-bundling-full.png",
+    "ok": true
+  },
+  {
+    "slug": "observable-wealth-health-nations",
+    "url": "https://observablehq.com/@d3/the-wealth-health-of-nations",
+    "title": "Page not found",
+    "category": "Animated data storytelling",
+    "screenshot": "design-research/screenshots/observable-wealth-health-nations.png",
+    "fullPageScreenshot": "design-research/screenshots/observable-wealth-health-nations-full.png",
+    "ok": true
+  },
+  {
+    "slug": "distill-feature-visualization",
+    "url": "https://distill.pub/2017/feature-visualization/",
+    "title": "Feature Visualization",
+    "category": "Scientific editorial, interactive explanation",
+    "screenshot": "design-research/screenshots/distill-feature-visualization.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "distill-circuits-zoom-in",
+    "url": "https://distill.pub/2020/circuits/zoom-in/",
+    "title": "Zoom In: An Introduction to Circuits",
+    "category": "Scientific interactive article",
+    "screenshot": "design-research/screenshots/distill-circuits-zoom-in.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "ciechanowski-mechanical-watch",
+    "url": "https://ciechanow.ski/mechanical-watch/",
+    "title": "Mechanical Watch – Bartosz Ciechanowski",
+    "category": "Explorable technical explanation",
+    "screenshot": "design-research/screenshots/ciechanowski-mechanical-watch.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "ciechanowski-internal-combustion",
+    "url": "https://ciechanow.ski/internal-combustion-engine/",
+    "title": "Internal Combustion Engine – Bartosz Ciechanowski",
+    "category": "Explorable engineering explanation",
+    "screenshot": "design-research/screenshots/ciechanowski-internal-combustion.png",
+    "fullPageScreenshot": null,
+    "ok": true
+  },
+  {
+    "slug": "seeing-theory-basic-probability",
+    "url": "https://seeing-theory.brown.edu/basic-probability/index.html",
+    "title": "Seeing Theory - Basic Probability",
+    "category": "Interactive learning visualization",
+    "screenshot": "design-research/screenshots/seeing-theory-basic-probability.png",
+    "fullPageScreenshot": "design-research/screenshots/seeing-theory-basic-probability-full.png",
+    "ok": true
+  },
+  {
+    "slug": "ncase-trust",
+    "url": "https://ncase.me/trust/",
+    "title": "The Evolution of Trust",
+    "category": "Explorable explanation",
+    "screenshot": "design-research/screenshots/ncase-trust.png",
+    "fullPageScreenshot": "design-research/screenshots/ncase-trust-full.png",
+    "ok": true
+  },
+  {
+    "slug": "pudding-pockets",
+    "url": "https://pudding.cool/2018/08/pockets/",
+    "title": "Women's Pockets are Inferior.",
+    "category": "Interactive editorial data story",
+    "screenshot": "design-research/screenshots/pudding-pockets.png",
+    "fullPageScreenshot": "design-research/screenshots/pudding-pockets-full.png",
+    "ok": true
+  }
+]

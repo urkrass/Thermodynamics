@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "dev": "\"%npm_node_execpath%\" node_modules/next/dist/bin/next dev --webpack",
+    "build": "\"%npm_node_execpath%\" node_modules/next/dist/bin/next build --webpack",
+    "start": "\"%npm_node_execpath%\" node_modules/next/dist/bin/next start",
+    "lint": "\"%npm_node_execpath%\" node_modules/eslint/bin/eslint.js",
+    "typecheck": "\"%npm_node_execpath%\" node_modules/typescript/bin/tsc --noEmit",
+    "test:animation": "\"%npm_node_execpath%\" node_modules/@playwright/test/cli.js test tests/animation-audit.spec.ts",
+    "animation:audit": "\"%npm_node_execpath%\" node_modules/@playwright/test/cli.js test tests/animation-audit.spec.ts",
+    "animation:audit:round2": "set ANIMATION_AUDIT_OUTPUT_ROOT=design-research/animation-audit-round-2&& \"%npm_node_execpath%\" node_modules/@playwright/test/cli.js test tests/animation-audit.spec.ts"
   },
   "dependencies": {
     "@visx/group": "^4.0.0-alpha.11",
@@ -27,6 +30,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.1.0",
     "@types/d3-array": "^3.2.2",
     "@types/d3-force": "^3.0.10",
